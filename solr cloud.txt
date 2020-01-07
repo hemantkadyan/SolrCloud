@@ -1,0 +1,42 @@
+Create Collection
+http://localhost:8983/solr/admin/collections?action=CREATE&name=products_singleshard&numShards=1&replicationFactor=2&maxShardsPerNode=2&collection.configName=productconfig
+
+Post JSON
+java -Durl=http://localhost:8983/solr/products_singleshard/update/json -Dtype=application/json -jar post.jar fin*.json
+
+POST JSON using CURL POST
+curl -X POST -H 'Content-type:application/json' --data-binary @"prodInventory1.json" 'http://localhost:8983/solr/Inventory/update'
+
+Upload Data to Zookeeper Ensemble
+solr zk upconfig -n productconfig -d newconfig
+
+2209 Data Server
+http://10.21.79.13:8983/solr/#/master_rilfnl_Product
+
+
+Important Links
+
+https://stackoverflow.com/questions/24361128/solrcloud-is-it-possible-to-get-the-shard-id-of-a-document-in-the-search-result
+
+https://stackoverflow.com/questions/20467649/solr-nodes-physical-space-utilization-in-a-shard
+
+https://stackoverflow.com/questions/32343813/custom-sharding-or-auto-sharding-on-solrcloud
+
+https://stackoverflow.com/questions/13712711/solr-join-query-in-distributed-configuration
+
+https://lucidworks.com/post/solr-cloud-document-routing/
+
+https://github.com/bloomreach/solrcloud-rebalance-api
+
+https://myjeeva.com/top-10-performance-tips-apache-solr.html
+
+https://myjeeva.com/solrcloud
+
+https://solr.pl/en/2013/12/02/solrcloud-what-happens-when-zookeeper-fails/
+
+https://learnzookeeperwithme.wordpress.com/2016/03/05/zookeeper-config-parameters/
+
+aadhaar
+pan
+payslip
+bank statement (july-august-september)
